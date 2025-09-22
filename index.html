@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle especial</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffafc;
+      overflow: hidden;
+    }
+    p {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff4da6;
+    }
+    img.main {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      animation: popIn 1.5s ease;
+      z-index: 1;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      80% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    .heart {
+      position: absolute;
+      color: #ff4da6;
+      font-size: 2em;
+      animation: floatUp 6s linear infinite;
+      z-index: 0;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+    .side {
+      position: absolute;
+      bottom: 0;
+      width: 120px;
+      animation: bounce 3s infinite ease-in-out;
+    }
+    .left { left: 5%; }
+    .right { right: 5%; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff4da6;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background: #e63c90;
+    }
+  </style>
+</head>
+<body>
+  <p>Estas flores son un pequeño gesto para una gran persona</p>
+  
+  <img class="main" src="TU_IMAGEN.jpg" alt="Detalle especial">
+
+  <div class="heart" style="left:15%;">💖</div>
+  <div class="heart" style="left:25%; animation-delay:1s;">✨</div>
+  <div class="heart" style="left:75%; animation-delay:2s;">💓</div>
+  <div class="heart" style="left:85%; animation-delay:3s;">⭐</div>
+
+  <img class="side left" src="https://static.wikia.nocookie.net/clashroyale/images/6/6e/WizardCard.png" alt="Mago Clash Royale">
+  <img class="side right" src="https://static.wikia.nocookie.net/clashroyale/images/f/f0/P.E.K.K.ACard.png" alt="Pekka Clash Royale">
+
+  <!-- Audio de fondo -->
+  <audio id="music" loop>
+    <source src="CANCION_CAIFANES.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+  
+  <!-- Botón para iniciar la música -->
+  <button onclick="document.getElementById('music').play()">🎵 Reproducir música</button>
+</body>
+</html>
